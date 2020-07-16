@@ -51,3 +51,18 @@ then
 else
        echo "Invalid Mobile Number"
 fi
+
+#enter password
+echo "Enter the Password:"
+read password
+
+len="${#password}"
+
+pas="^(([A-Z]{1,})([a-z]{1,})([0-9]{1,}))*([!@#$%^&*_+-=?<>]{1}[0-9a-zA-Z]{1,})$"
+
+if [[ $password =~ $pas ]] && [[ $len -gt 7 ]] && [[ $len -lt 17 ]]
+then
+        echo "Valid Password"
+else
+        echo "Invalid Password...Password must contain atleast 1 upper case, 1 lower case, 1 numeric and exact 1 special character."
+fi
